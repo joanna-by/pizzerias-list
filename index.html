@@ -1,8 +1,11 @@
 <html>
   <head>
+    <script src="https://www.gstatic.com/firebasejs/6.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.1/firebase-firestore.js"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+      
     <h1>Pizzerias List:</h1>
 
     <div class="content">
@@ -11,6 +14,22 @@
       <ul id="pizzeria-list"></ul>
     </div>
 
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDZryAxYDuYoSCVgFWgIIMhVV_jOcgXzOk",
+        authDomain: "pizzerias-list.firebaseapp.com",
+        databaseURL: "https://pizzerias-list.firebaseio.com",
+        projectId: "pizzerias-list",
+        storageBucket: "pizzerias-list.appspot.com",
+        messagingSenderId: "1044641800337",
+        appId: "1:1044641800337:web:620b6b0ead9f2c52"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const database = firebase.firestore();
+      database.settings({ timestampsInSnapshots: true });
+    </script>
     <script src="app.js"></script>
   </body>
 </html>
