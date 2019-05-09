@@ -1,4 +1,5 @@
 const pizzeriasList = document.querySelector("#pizzeria-list");
+const form = document.querySelector("#add-pizzeria-form");
 
 function renderPizzeria(doc) {
   let li = document.createElement("li");
@@ -15,6 +16,7 @@ function renderPizzeria(doc) {
   pizzeriasList.appendChild(li);
 }
 
+//getting data
 database
   .collection("pizzerias")
   .get()
@@ -23,3 +25,14 @@ database
       renderPizzeria(doc);
     });
   });
+
+//saving data
+form.addEventListener("submit", event => {
+  event.preventDefault();
+  database.collection("pizzerias").add({
+    name: form.name.value,
+    city: form.city.value
+  });
+  form.name.value = "";
+  form.city.value = "";
+});

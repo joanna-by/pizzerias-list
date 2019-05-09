@@ -5,7 +5,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-position:center;
+  background-position: center;
 
   font-family: ubuntu;
 }
@@ -86,7 +86,7 @@ form input {
 
 form input:focus {
   outline: none;
-  border-bottom: 3px solid #88236f;
+  border-bottom: 3px solid #e4685d;
   padding-bottom: 8px;
   transition: all ease 0.2s;
 }
@@ -99,13 +99,22 @@ form:after {
 
 button {
   border: 0;
-  background: #fff;
-  border-radius: 10px;
-  padding: 13px;
-  width: 14%;
-  box-shadow: -1px 0px 1px rgba(0, 0, 0, 0.1);
   font-weight: bold;
   font-family: ubuntu;
   letter-spacing: 1px;
-  color: #999;
+  padding: 13px;
+  width: 14%;
+  border: none;
+  background: #7a7a7a;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+button:hover {
+  background: #e4685d;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.3s ease 0s;
 }
