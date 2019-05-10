@@ -29,16 +29,6 @@ function renderPizzeria(doc) {
   });
 }
 
-//getting data
-database
-  .collection("pizzerias")
-  .get()
-  .then(snapshot => {
-    snapshot.docs.forEach(doc => {
-      renderPizzeria(doc);
-    });
-  });
-
 //saving data
 form.addEventListener("submit", event => {
   event.preventDefault();
@@ -49,3 +39,20 @@ form.addEventListener("submit", event => {
   form.name.value = "";
   form.city.value = "";
 });
+
+//real-time listener
+
+database
+  .collection("pizzerias")
+  .orderBy("city")
+  .onSnapshot(snapshot => {
+    let changes = snapshot.docChanges();
+    changes.forEach(change => {
+      if (change.type == "added") {
+        renderPizzeria(change.doc);
+      } else if (change.type == "removed") {
+        let li = pizzeriasList.querySelector("[data-id=" + change.doc.id + "]");
+        pizzeriasList.removeChild(li);
+      }
+    });
+  });
