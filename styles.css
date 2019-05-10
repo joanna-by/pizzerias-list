@@ -1,11 +1,9 @@
 body {
   background-image: url("pizza.jpg");
   background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
   background-size: cover;
-  background-position: center;
 
   font-family: ubuntu;
 }
@@ -15,7 +13,6 @@ h1 {
   font-size: 64px;
   letter-spacing: 2px;
   margin-top: 80px;
-  /*text-align: center;*/
   margin-left: 2rem;
   text-shadow: 4px 3px 0 #7a7a7a;
 }
@@ -105,7 +102,7 @@ button {
   padding: 13px;
   width: 14%;
   border: none;
-  background: #7a7a7a;
+  background: #e4685d;
   color: #fff;
   text-transform: uppercase;
   border-radius: 6px;
@@ -113,7 +110,7 @@ button {
 }
 
 button:hover {
-  background: #e4685d;
+  background: #7a7a7a;
   -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
   -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
   transition: all 0.3s ease 0s;
