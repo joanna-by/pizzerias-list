@@ -1,1 +1,1 @@
-Simple pizzerias list created with Firebase Database.
+Simple pizzerias list created with Firestore Database.
